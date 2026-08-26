@@ -1,0 +1,138 @@
+generated: '2026-08-25'
+method: probed
+source: https://medrobotics.com/.well-known/
+note: >-
+  Every /.well-known/ path on medrobotics.com answers HTTP 200 with the SAME ~27KB
+  domain-parking HTML shell (or a 195-byte catch-all stub), not a document. The domain
+  is parked: it resolves to 208.91.197.132 and its registry nameservers are
+  NS1/NS2.PENDINGRENEWALDELETION.COM. Medrobotics Corporation filed Chapter 7 bankruptcy
+  in the District of Massachusetts on 2022-01-24 (case 1:22-bk-10077) and its plant and
+  IP were liquidated at auction in June 2024, so no host under this company's control
+  serves any of these documents. Recorded as an absence: every status below is a soft-200
+  parking page, which is a MISS, not a hit. No WellKnown or SecurityTxt pointer is emitted
+  in apis.yml because nothing here is a real document.
+hosts:
+- host: medrobotics.com
+  note: >-
+    Parked domain (Network Solutions pending-renewal-deletion nameservers). Responses are
+    intermittent — some probes reset the connection mid-transfer; statuses below are the
+    codes actually observed on a completed transfer.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    result: miss
+    detail: 27450-byte domain-parking HTML shell, content-type text/html. Not RFC 9116 text.
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    result: miss
+    detail: 27456-byte domain-parking HTML shell, content-type text/html. Not JSON.
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    result: miss
+    detail: 27636-byte domain-parking HTML shell, content-type text/html. Not JSON.
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    result: miss
+    detail: Same domain-parking HTML shell. Not JSON.
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    result: miss
+    detail: 27317-byte domain-parking HTML shell, content-type text/html. Not an RFC 9727 catalog.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    result: miss
+    detail: Domain-parking HTML shell, content-type text/html. Not JSON.
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    result: miss
+    detail: >-
+      195-byte HTML catch-all stub, content-type text/html. Rejected per the A2A probe rule
+      — a 200 whose body is HTML is a parking/SPA catch-all, not an AgentCard. No a2a/
+      artifact is written.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    result: miss
+    detail: >-
+      195-byte HTML catch-all stub (legacy pre-0.3 agent card path). Rejected for the same
+      reason as agent-card.json.
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery was run against the only host associated with this company.
+    There are no apis[] entries, no baseURL and no OpenAPI servers[] hosts in this repo, so
+    medrobotics.com is the full host set.
+  probes:
+  - url: https://medrobotics.com/openapi.json
+    status: 200
+    result: miss
+    detail: HTML catch-all stub, does not parse as OpenAPI.
+  - url: https://medrobotics.com/openapi.yaml
+    status: 200
+    result: miss
+    detail: 27474-byte domain-parking HTML shell.
+  - url: https://medrobotics.com/swagger.json
+    status: 200
+    result: miss
+    detail: 195-byte HTML catch-all stub.
+  - url: https://medrobotics.com/v1/openapi.json
+    status: 200
+    result: miss
+    detail: HTML catch-all stub.
+  - url: https://medrobotics.com/api-docs
+    status: 200
+    result: miss
+    detail: HTML catch-all stub.
+  - url: https://medrobotics.com/api
+    status: 200
+    result: miss
+    detail: 27349-byte domain-parking HTML shell.
+  - url: https://medrobotics.com/docs
+    status: 200
+    result: miss
+    detail: 27296-byte domain-parking HTML shell.
+  - url: https://medrobotics.com/developers
+    status: 200
+    result: miss
+    detail: Domain-parking HTML shell.
+  - url: https://medrobotics.com/llms.txt
+    status: 200
+    result: miss
+    detail: 27252-byte domain-parking HTML shell, not llms.txt.
+  - url: https://medrobotics.com/sitemap.xml
+    status: 200
+    result: miss
+    detail: 195-byte HTML catch-all stub, not XML.
+  - url: https://medrobotics.com/robots.txt
+    status: 200
+    result: parking-fingerprint
+    detail: >-
+      Real text/plain, but it is the generic domain-parking robots.txt (disallows
+      /__media__/js/templates.js, /cmedianet, /mediamainlog.php) with a trailing
+      "User-agent: * / Disallow: /". It confirms parking; it is not a company surface.
+  graphql: not-attempted
+  graphql_note: No /graphql surface exists — no API host, no docs host, no baseURL.
+  mcp: not-attempted
+  mcp_note: No MCP endpoint is published or referenced anywhere for this company.
+  registries:
+  - registry: npm
+    query: medrobotics
+    status: 404
+  - registry: pypi
+    query: medrobotics
+    status: 404
+  github:
+  - url: https://github.com/medrobotics
+    status: 200
+    result: miss
+    detail: >-
+      An EMPTY GitHub organization with 0 public repositories, created 2026-02-23 — four
+      years after the Chapter 7 filing and two years after the asset auction. It carries no
+      name, company, or blog field. It is not a first-party Medrobotics org and nothing is
+      wired from it.
