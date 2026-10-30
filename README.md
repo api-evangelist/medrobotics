@@ -64,5 +64,28 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Medrobotics is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/medrobotics_stock/
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
+Medrobotics Corporation was a Raynham, Massachusetts surgical robotics manufacturer, founded as CardioRobotics, that built the Flex Robotic System — an articulating, steerable robotic endoscope platform cleared by the FDA in 2015 and CE-marked for minimally invasive procedures in otolaryngology, colorectal surgery and gastroenterology, and deployed at roughly thirty hospitals worldwide. The company was a medical device manufacturer, not a software vendor: its product was an operating-room capital robot and its single-use accessories, and it never operated a developer program, a public API, an SDK or a developer portal. Medrobotics filed for Chapter 7 bankruptcy in the U.S. Bankruptcy Court for the District of Massachusetts on 2022-01-24 (case 1:22-bk-10077), following judgments in the Endobotics litigation, and in June 2024 the Chapter 7 trustee liquidated the entire 40,000-square-foot Raynham plant at auction — 23 complete Flex and Flex360 systems plus roughly 22 terabytes of technical specifications, customer lists and other intellectual property. The company is defunct. Its domain, medrobotics.com, is now a parked page served by a domain-parking network and its registry nameservers are NS1/NS2.PENDINGRENEWALDELETION.COM. This profile is retained as an honest zero: there is no API surface to catalog, and there never was one.
+
+**Areas:** Company · Medical Devices · Surgical Robotics · Robotics · Healthcare · Medical Technology · Defunct
+
+## Medrobotics on APIs.io (historical record)
+
+Everything profiled for Medrobotics is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/medrobotics/](https://apis.io/providers/medrobotics/)** — or go straight to one of the APIs or properties below.
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Medrobotics: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/medrobotics/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
